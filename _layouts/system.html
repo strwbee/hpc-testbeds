@@ -1,0 +1,41 @@
+---
+layout: default
+---
+
+<main id="main" class="main-content" aria-label="Content">
+  <article class="h-entry">
+    {% include page-image.html %}
+    <div class="page-wrapper">
+      <header class="page-header">
+        {% assign title = page.title | markdownify | strip_html %}
+        {% if page.link %}
+          <h1 id="page-title" class="page-title p-name"><a href="{{ page.link }}">{{ title }} <span class="link-arrow">&rarr;</span></a></h1>
+        {% else %}
+          <h1 id="page-title" class="page-title p-name">{{ name }}</h1>
+        {% endif %}
+      </header>
+
+      <div class="page-content">
+        <ul>
+          <li>{{ site.data.categories[page.category].shortdescription }}</li>
+          <li>{{ site.data.statuses[page.status].shortdescription }}</li>
+          <li>{{ site.data.focuses[page.focus].shortdescription }}{% if page.focus-detail %}for {{ page.focus-detail }}{% endif %}</li>
+          {% if page.funders %}
+          <li>funded by {{ page.funders | join: ", " }}</li>
+          {% endif %}
+          <li>{{ page.nodes }} nodes, with {{ page.accelerator-count }} accelerators per node</li>
+          <li>Accelerators: {{ page.accelerators | join: ", " }}</li>
+          <li>Manufactured by {{ page.manufacturer }}</li>
+          <li>Scheduler: {{ page.scheduler }}</li>
+          <li>Interconnects: {{ page.interconnects | join: ", " }}</li>
+        </ul>
+
+        <div class="e-content">
+          {{ content }}
+        </div>
+
+        {% include page-pagination.html %}
+      </div>
+    </div>
+  </article>
+</main>

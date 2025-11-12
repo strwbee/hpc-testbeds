@@ -1,0 +1,6 @@
+regional:
+  shortdescription: "Regional system"
+discipline:
+  shortdescription: "Discipline-specific system"
+general:
+  shortdescription: "General-purpose system"

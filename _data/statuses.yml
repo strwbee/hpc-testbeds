@@ -1,0 +1,12 @@
+in-service:
+  shortdescription: "In service"
+  description: "System is operational and running production workloads for users"
+end-of-life:
+  shortdescription: "End of life"
+  description: "System is no longer operational. Data are retained for historical interest"
+pre-production:
+  shortdescription: "Pre-production"
+  description: "System is installed but not yet serving the use community."
+planned:
+  shortdescription: "Planned"
+  description: "System is planned and possibly in procurement but not installed."

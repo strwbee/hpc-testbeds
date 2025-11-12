@@ -1,0 +1,6 @@
+production:
+  shortdescription: "Production system"
+  description: "System is designed for research workloads in computational science"
+testbed:
+  shortdescription: "Test bed"
+  description: "System is designed for testing of new hardware and prototyping of software on it"
