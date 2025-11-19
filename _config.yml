@@ -20,6 +20,8 @@ description: >-
 minimal_mistakes_skin: air
 search: true
 
+repository: edbennett/hpc-testbeds
+
 # Liquid
 liquid:
   error_mode: strict
