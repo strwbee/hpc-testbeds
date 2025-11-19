@@ -1,0 +1,63 @@
+---
+name: <!-- Insert the name of your system here. -->
+status: <!-- Either in-service, pre-production, or planned. See _data/statuses.yml for more detail. -->
+category: <!-- Either production or testbed. See _data/categories.yml for more detail. -->
+focus: <!-- Either general, regional, or discipline. See _data/focuses.yml for more detail. -->
+focus-detail: <!-- Detail to add after the focus, which will follow the word "for". For a regional system, what region(s)? For a discipline-specific system, what discipline(s)? -->
+grouping: <!-- If this system is part of a group of related systems, name the group here. -->
+funders:
+- <!-- Add a list here of organisations funding the system, each preceded by a hyphen -->
+nodes: <!-- How many nodes does the system have? -->
+accelerators:
+- <!-- Add a list of accelerators used in the system, each preceded by a hyphen. -->
+- <!-- If the accelerators are substanatially different, then consider creating files for the two partitions as separate systems. -->
+accelerator-count: <!-- How many accelerators are present per node? -->
+manufacturer: <!-- Who manufactured the system? E.g. Dell, Fujitsu, Lenovo -->
+scheduler: <!-- What scheduler is used to manage jobs? E.g. Slurm, PBS Pro, SGE, Spectrum Scale -->
+interconnects:
+- <!-- Add a list of interconnects present in the system, each preceded by a hyphen. -->
+- <!-- This includes both inter-GPU (e.g. NVLink) and inter-node (e.g. Infiniband) interconnects
+reference: <!-- Insert the URL of a page where one may read more about the system and getting access. Additional links can be added in the text below. -->
+---
+
+<!-- Text shown in comment tags like this will not be visible in the generated page.
+     In the block above,
+     they should be removed entirely. -->
+
+## <!-- Add your system name here -->
+
+<!-- Provide a brief description of your system here.
+     Perhaps mention where it is located,
+     what hardware it has,
+     and what its purpose is. -->
+
+<!-- You can add additional information in sections below this.
+     Each section should start with a title preceded by ###
+     The following sections are examples of information you should consider including,
+     but are not exhaustive. -->
+
+### Documentation
+
+<!-- Add a list here of links to documentation on the system.
+     Each link should be formatted similarly to the example below. -->
+
+- <https://example.com>
+
+### Gaining access
+
+<!-- Describe here who is allowed to get access to the system,
+     and how one gets access if one is allowed.
+     For example,
+     an application form or portal,
+     or email address to contact. -->
+
+### Restrictions
+
+<!-- If the system restricts the types of workload that may be submitted
+     in a way that is not obvious to a user familiar with other systems,
+     mention this here.
+     For example,
+     are there constraints on the size of job submitted
+     to powers of two,
+     or to less than one node?
+     What is the wall time limit on jobs? -->
