@@ -18,7 +18,7 @@ email:
 description: >-
   A listing of production and test-bed high-performance systems in the UK.
 minimal_mistakes_skin: air
-search: true
+search: false
 
 repository: edbennett/hpc-testbeds
 

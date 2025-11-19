@@ -1,4 +1,14 @@
-<table>
+---
+page_css:
+- "https://cdn.datatables.net/2.3.5/css/dataTables.dataTables.min.css"
+---
+
+
+<script src="https://cdn.datatables.net/2.3.5/js/dataTables.min.js" crossorigin=""></script>
+<script src="https://code.jquery.com/jquery-3.7.1.js" crossorigin=""></script>
+
+
+<table id="systems" class="display">
   <thead>
     <tr>
       <th>System name</th>
@@ -40,4 +50,62 @@
     </tr>
     {% endfor %}
   </tbody>
+  <tfoot> <!-- add empty space to indicate we want to have a filter drop-down -->
+    <th></th>
+    <th>&nbsp;</th> <!-- Status -->
+    <th>&nbsp;</th> <!-- Categories -->
+    <th>&nbsp;</th> <!-- Focus -->
+    <th>&nbsp;</th> <!-- Focus detail -->
+    <th>&nbsp;</th> <!-- Grouping -->
+    <th></th>
+    <th></th>
+    <th></th>
+    <th></th>
+    <th>&nbsp;</th> <!-- Manufacturer -->
+    <th>&nbsp;</th> <!-- Scheduler -->
+    <th></th>
+    <th></th>
+  </tfoot>
 </table>
+
+<script>
+let table = new DataTable(
+  '#systems',
+  {
+    scrollX: true,
+    initComplete: function () {
+        this.api()
+            .columns()
+            .every(function () {
+                let column = this;
+
+                if (column.footer().innerHTML == '<div class="dt-column-footer"><span class="dt-column-title"></span></div>') {
+                  return;
+                }
+
+                // Create select element
+                let select = document.createElement('select');
+                select.style.width = "100%";
+                select.add(new Option(''));
+                column.footer().replaceChildren(select);
+
+                // Apply listener for user change in value
+                select.addEventListener('change', function () {
+                    column
+                        .search(select.value, {exact: true})
+                        .draw();
+                });
+
+                // Add list of options
+                column
+                    .data()
+                    .unique()
+                    .sort()
+                    .each(function (d, j) {
+                        select.add(new Option(d));
+                    });
+            });
+    }
+  }
+);
+</script>
