@@ -34,16 +34,27 @@ and then follow either of the following sets of instructions:
 5. Add as much or as little text description of the system as you like,
    below the `---` block.
    Examples of things to include are described in the template.
-6. Commit this file to the repository and push to your fork:
+6. Optionally,
+   test that the site builds.
+   If you have Ruby and Bundler installed,
+   run
+
+       bundle install
+       bundle exec jekyll serve
+   
+   Open `https://localhost:4000` in your browser
+   and verify that your system shows up in the table,
+   and that its page displays correctly when you click through to it.
+7. Commit this file to the repository and push to your fork:
 
        git add _systems/my-awesome-system.md
        git commit -m "add My Awesome System"
 
-7. If you are adding multiple systems as part of the same cluster
+8. If you are adding multiple systems as part of the same cluster
    (for example,
    if you there are multiple diverse partitions),
-   repeat the above steps 3&ndash;6 for each system.
-8. Open a pull request to the `SHAREing-dri/hpc-testbeds` repository.
+   repeat the above steps 3&ndash;7 for each system.
+9. Open a pull request to the `SHAREing-dri/hpc-testbeds` repository.
 
 ### Using GitHub on the web
 
