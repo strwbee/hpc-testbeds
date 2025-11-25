@@ -20,6 +20,9 @@ description: >-
 minimal_mistakes_skin: air
 search: false
 
+masthead_title: SHAREing
+masthead_url: https://shareing-dri.github.io
+
 repository: edbennett/hpc-testbeds
 
 # Liquid
