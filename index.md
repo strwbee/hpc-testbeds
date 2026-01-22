@@ -24,23 +24,30 @@ such that it is easier for researchers to find the right system for the right pu
 For each system,
 click its name to find out more about that system.
 
+{% assign columns = "System name,Status,Category,Focus,Focus area,Grouping,Funders,Nodes,Accelerators,Accelerator count per node,Manufacturer,Scheduler,Interconnects,Reference" | split: "," %}
+
+<p style="margin-bottom: 0px; padding-bottom: 0px;">
+  <a class="toggle-visibility-controls">
+    Show/hide columns
+    <span class="visibility-control-shown" style="display: none;">▴</span>
+    <span class="visibility-control-hidden" style="display: inline;">▾</span>
+  </a>
+</p>
+
+<div class="visibility-controls" style="display: none; padding-top: 0px;">
+{% for column in columns %}
+  <a class="toggle-visibility-column column-shown" data-column="{{ forloop.index0 }}">{{ column }}</a>
+  {% unless forloop.last %}•{% endunless %}
+{% endfor %}
+</div>
+
+
 <table id="systems" class="display">
   <thead>
     <tr>
-      <th>System name</th>
-      <th>Status</th>
-      <th>Category</th>
-      <th>Focus</th>
-      <th>Focus area</th>
-      <th>Grouping</th>
-      <th>Funders</th>
-      <th>Nodes</th>
-      <th>Accelerators</th>
-      <th>Accelerator count per node</th>
-      <th>Manufacturer</th>
-      <th>Scheduler</th>
-      <th>Interconnects</th>
-      <th>Reference</th>
+{% for column in columns %}
+      <th>{{ column }}</th>
+{% endfor %}
     </tr>
   </thead>
   <tbody>
@@ -123,6 +130,42 @@ let table = new DataTable(
     }
   }
 );
+
+document.querySelectorAll('a.toggle-visibility-column').forEach((eventList) => {
+    eventList.addEventListener('click', function (event) {
+        event.preventDefault();
+        let element = event.target;
+
+        let columnIdx = element.getAttribute('data-column');
+        let column = table.column(columnIdx);
+
+        // Toggle the column visibility and colour-code the control to indicate this
+        if (column.visible()) {
+          element.classList.add('column-hidden');
+          element.classList.remove('column-shown');
+          column.visible(false);
+        } else {
+          element.classList.remove('column-hidden');
+          element.classList.add('column-shown');
+          column.visible(true);
+        }
+    });
+});
+
+// Toggle the visibility of the visibility controls
+document.querySelector('a.toggle-visibility-controls').addEventListener('click', function(e) {
+    e.preventDefault();
+    controls = document.querySelector('div.visibility-controls');
+    if (controls.style.display == 'none') {
+      controls.style.display = 'inline';
+      document.querySelector('span.visibility-control-shown').style.display = 'inline';
+      document.querySelector('span.visibility-control-hidden').style.display = 'none';
+    } else {
+      controls.style.display = 'none';
+      document.querySelector('span.visibility-control-shown').style.display = 'none';
+      document.querySelector('span.visibility-control-hidden').style.display = 'inline';
+    }
+});
 </script>
 
 ## Disclaimer
