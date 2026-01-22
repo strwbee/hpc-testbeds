@@ -88,7 +88,6 @@ click its name to find out more about that system.
 let table = new DataTable(
   '#systems',
   {
-    scrollX: true,
     initComplete: function () {
         this.api()
             .columns()
