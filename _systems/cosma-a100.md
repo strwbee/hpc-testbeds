@@ -31,7 +31,7 @@ The A100 nodes are GPU testbeds within COSMA.
 |------|-----|-----|--------|
 | mad04 | 4TB | 128 cores (AMD EPYC) | Slurm (`cosma8-shm`) |
 | mad05 | 4TB | 128 cores (AMD EPYC) | Slurm (`cosma8-shm`) |
-| mad06 | 1TB | 128 cores (AMD EPYC Milan-X) | SSH only |
+| mad06 | 1TB | 128 cores (AMD EPYC Milan-X) | Direct SSH |
 
 The A100 GPUs (3 total) are connected via a Liqid composable fabric, allowing them to be moved between these nodes. The default configuration is 1 GPU per node. To request a different configuration, contact cosma-support@durham.ac.uk.
 
@@ -39,6 +39,7 @@ The A100 GPUs (3 total) are connected via a Liqid composable fabric, allowing th
 
 - <https://cosma.readthedocs.io/en/latest/gpu.html#using-the-composable-a100-gpus>
 - <https://cosma.readthedocs.io/en/latest/cosma.html>
+- https://www.nvidia.com/en-gb/data-center/a100/ 
 
 ### Gaining access
 
