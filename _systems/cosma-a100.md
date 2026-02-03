@@ -39,7 +39,7 @@ The A100 GPUs (3 total) are connected via a Liqid composable fabric, allowing th
 
 - <https://cosma.readthedocs.io/en/latest/gpu.html#using-the-composable-a100-gpus>
 - <https://cosma.readthedocs.io/en/latest/cosma.html>
-- https://www.nvidia.com/en-gb/data-center/a100/ 
+- <https://www.nvidia.com/en-gb/data-center/a100> 
 
 ### Gaining access
 
@@ -79,5 +79,5 @@ For mad06, connect directly via SSH from a login node: `ssh mad06`
 ### Restrictions
 
 - Maximum wall time: 3 days
-- Nodes are non-exclusive by default (shared with other users). Use `--exclusive` if you require the entire node.
+- Nodes are non-exclusive by default (shared with other users). Use `--exclusive` if you require the entire node
 - CUDA is available via `module load nvhpc/25.11`

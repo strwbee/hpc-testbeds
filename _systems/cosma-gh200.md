@@ -28,8 +28,8 @@ The GH200 (Grace Hopper) nodes are GPU testbeds within COSMA.
 
 | Node | RAM | CPU | Access |
 |------|-----|-----|--------|
-| gn002 | 480GB (unified) | 72 cores (ARM-based Grace) | Direct SSH |
-| gn003 | 480GB (unified) | 72 cores (ARM-based Grace) | Slurm (`gracehopper`) |
+| gn002 | 480GB (unified) | 72 cores (ARM Grace) | Direct SSH |
+| gn003 | 480GB (unified) | 72 cores (ARM Grace) | Slurm (`gracehopper`) |
 
 The GH200 is NVIDIA's "Superchip"; It achieves a CPU+GPU coherent memory model by combing an NVIDIA H100 GPU and an NVIDIA Grace CPU using NVIDIA NVLINK-C2C. 
 
@@ -39,7 +39,7 @@ As the Grace CPU is Arm-based (aarch64), x64 binaries will not run. Code must be
 
 - <https://cosma.readthedocs.io/en/latest/gpu.html#grace-hopper>
 - <https://cosma.readthedocs.io/en/latest/cosma.html>
-- https://www.nvidia.com/en-gb/data-center/grace-hopper-superchip/
+- <https://www.nvidia.com/en-gb/data-center/grace-hopper-superchip>
 
 ### Gaining access
 
@@ -74,6 +74,6 @@ nvidia-smi # checks existence of GPU
 ### Restrictions
 
 - Maximum wall time: 3 days
-- x86 binaries will not run. Code must be compiled on the node itself.
+- x86 binaries will not run. Code must be compiled on the node itself
 - No system cmake on nodes. Install cmake using `pip3 install --user cmake` and add `$HOME/.local/bin` to PATH
 - CUDA is available at `/usr/local/cuda-13.0/bin/nvcc`
